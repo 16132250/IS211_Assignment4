@@ -1,7 +1,6 @@
 import time
 import random
 
-
 def get_me_random_list(n):
     """Generate list of n elements in random order
     
@@ -29,7 +28,6 @@ def sequential_search(a_list, item):
     # print(start_time,end_time)
     # print(run_time)
     return found, run_time
-
 
 def ordered_sequential_search(a_list, item):
     pos = 0
@@ -100,7 +98,7 @@ if __name__ == "__main__":
     """Main entry point"""
 
     sizes = [500, 1000, 10000]
-    search_item = -1
+    search_item = 9999999999999
     # Test sequential search
     for the_size in sizes:
         total_time = 0
@@ -161,24 +159,3 @@ if __name__ == "__main__":
         average_time = total_time / 100
         print(f"Binary Search Recursive took {average_time:10.7f} seconds to run, "
               f"on average for list size {the_size}")
-
-
-
-    """
-    # Original 
-    the_size = 500
-
-    total_time = 0
-    for i in range(100):
-        mylist = get_me_random_list(the_size)
-        # sorting is not needed for sequential search.
-        mylist = sorted(mylist)
-
-        start = time.time()
-        check = binary_search_iterative(mylist, -1)
-        time_spent = time.time() - start
-        total_time += time_spent
-
-    avg_time = total_time / 100
-    print(f"Binary Search Iterative took {avg_time:10.7f} seconds to run, on average for a list of {the_size} elements")
-    """
